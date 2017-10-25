@@ -305,8 +305,6 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Entry> yVals_wave = new ArrayList<Entry>();
         for (int i = 0; i < tampWaveBandPass.length; i++) {
             yVals_wave.add(new Entry(i, (float) waveBandPass.get(i)));
-
-
         }
 
 
@@ -330,14 +328,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void applyChart2() {
-
-
         Short[] tampWaveBandPass = new Short[waveCutedShort.size()];
         ArrayList<Entry> yVals_wave2 = new ArrayList<Entry>();
         for (int i = 0; i < tampWaveBandPass.length; i++) {
             yVals_wave2.add(new Entry(i, (float) waveCutedShort.get(i)));
-
-
         }
 
   /*      chart2.getAxisLeft().setAxisMinValue(-32768);
@@ -372,15 +366,13 @@ public class MainActivity extends AppCompatActivity {
 
         temp_data[1] = size / 2;
         for (int i = 0; i < size; i++) {
-
             //real[i] = (double) data[i] / 32768.0; // signed 16 bit
             //image[i] = 0.0;
 
             temp_data[2 * i] = (double) waveCutedShortBandPass.get(i) / 32768.0;
             temp_data[2 * i + 1] = 0;
-
-
         }
+
         DoubleFFT_1D fft = new DoubleFFT_1D(size);
         fft.complexForward(temp_data);
         int new_size = size;
@@ -419,6 +411,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < size; i++) {
             xVal.add("");
         }
+        
         return xVal;
     }
 
